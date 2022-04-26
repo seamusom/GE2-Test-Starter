@@ -5,9 +5,9 @@ using UnityEngine;
 public class Nematode : MonoBehaviour
 {
     public int length = 15;
-    bool leader = true;
+   // bool leader = true;
     public Material material;
-    Rigidbody rb;
+    //Rigidbody rb;
     void Awake()
     {
 
@@ -17,8 +17,8 @@ public class Nematode : MonoBehaviour
         length = Random.Range(15, 25);
         for (int i = 1; i < length; i ++ )
         {
-            float height = i / length;
-            float width = i / length;
+           // float height =  i/length;
+            //float width =  i/length;
             float color = 1f/ length*i;
             
 
@@ -26,7 +26,7 @@ public class Nematode : MonoBehaviour
            MeshRenderer mesh = sphere.GetComponent<MeshRenderer>();
             mesh.material.color = Color.HSVToRGB(color,1f,1f);
             sphere.transform.position = new Vector3(1, 1, i);
-            sphere.transform.localScale -= new Vector3(0,width, height);
+            sphere.transform.localScale -= new Vector3(i * 0.05f, i*0.05f, 0);
             sphere.transform.SetParent(transform);
             //sphere.AddComponent<SphereCollider>();
             //rb = sphere.AddComponent<Rigidbody>();
