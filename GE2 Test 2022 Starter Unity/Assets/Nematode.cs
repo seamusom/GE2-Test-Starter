@@ -7,7 +7,7 @@ public class Nematode : MonoBehaviour
     public int length = 15;
     bool leader = true;
     public Material material;
-
+    Rigidbody rb;
     void Awake()
     {
 
@@ -25,9 +25,13 @@ public class Nematode : MonoBehaviour
             GameObject sphere = GameObject.CreatePrimitive(PrimitiveType.Sphere);
            MeshRenderer mesh = sphere.GetComponent<MeshRenderer>();
             mesh.material.color = Color.HSVToRGB(color,1f,1f);
-            sphere.transform.position = new Vector3(height, width, i);
-            //sphere.transform.localScale = new Vector3(3f*(height),3f*(width), 1);
+            sphere.transform.position = new Vector3(1, 1, i);
+            sphere.transform.localScale -= new Vector3(0,width, height);
             sphere.transform.SetParent(transform);
+            //sphere.AddComponent<SphereCollider>();
+            //rb = sphere.AddComponent<Rigidbody>();
+           // rb.useGravity=false;
+
             if(i == 1)
             {
                 sphere.AddComponent<Boid>();
