@@ -20,8 +20,8 @@ public class NematodeSchool : MonoBehaviour
         
         for(int i = 0; i < count; i++)
         {
-            float rotation = Random.Range(0f, 360f);
-            Vector3 spawn= (Random.insideUnitSphere * radius) + new Vector3(10,20,30);
+            float rotation = Random.Range(0, 360);
+            Vector3 spawn= (Random.insideUnitSphere * radius) + new Vector3(50,50,50);
             Quaternion rot = Quaternion.Euler(0, rotation, 0);
             Instantiate(prefab,spawn,rot);
             //prefab.transform.Rotate(0, rotation, 0);

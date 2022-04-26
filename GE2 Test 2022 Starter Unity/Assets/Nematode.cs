@@ -20,7 +20,7 @@ public class Nematode : MonoBehaviour
             float height = i / length;
             float width = i / length;
             float color = 1f/ length*i;
-
+            
 
             GameObject sphere = GameObject.CreatePrimitive(PrimitiveType.Sphere);
            MeshRenderer mesh = sphere.GetComponent<MeshRenderer>();
@@ -38,9 +38,9 @@ public class Nematode : MonoBehaviour
                 sphere.AddComponent<ObstacleAvoidance>();
                 sphere.AddComponent<Constrain>();
                 sphere.AddComponent<NoiseWander>();
+                
             }
             
-
             
            
         }
