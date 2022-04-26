@@ -11,10 +11,18 @@ public class NematodeSchool : MonoBehaviour
     
     public int count = 10;
 
+    Transform spawn;
+
     // Start is called before the first frame update
     void Awake()
     {
-        // Put your code here
+        for(int i = 0; i < count; i++)
+        {
+            float rotation = Random.Range(0f, 360f);
+            spawn.transform.position = Random.insideUnitSphere * radius;
+            Instantiate(prefab,spawn);
+            prefab.transform.Rotate(0, rotation, 0);
+        }
     }
 
     // Update is called once per frame
